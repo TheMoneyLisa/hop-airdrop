@@ -1,0 +1,1 @@
+docker build -t defitrack/hop-airdrop-${BRANCH_NAME} .
