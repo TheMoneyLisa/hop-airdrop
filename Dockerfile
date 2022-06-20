@@ -8,6 +8,5 @@ WORKDIR /app
 COPY yarn.lock /app/
 RUN yarn
 COPY ./ /app/
-# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
-EXPOSE 3000
+EXPOSE 8080
 CMD ["npm","run","start"]
