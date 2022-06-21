@@ -69,7 +69,10 @@ class ShardedMerkleTree {
 
         const proof = this.trees[shardid].getProof(leaf).map((entry: any) => '0x' + entry.data.toString('hex'))
 
-        return [entry, proof.concat(shard.proof)]
+        return {
+            balance: entry.balance,
+            proof: proof.concat(shard.proof)
+        }
     }
 
     static async fetchRootFile() {
